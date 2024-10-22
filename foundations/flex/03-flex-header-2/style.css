@@ -12,6 +12,9 @@ body {
   background: white;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 0 8px rgba(0,0,0,.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
 }
 
 .profile-image {
@@ -45,4 +48,25 @@ a {
 
 ul {
   list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
 }
+
+.left, .right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Explanation: First add a left and right div to separate each
+side of the header from each other. Those become the main header
+items that are targeted by the flex, the direct children. So those
+2 header items have space-between and padding 8px. Then to edit the
+displays of the items inside those flex boxes, you target left and
+right respectively.
+
+The ul is another flex container with children. The margin and padding
+are 0 to not add extra space and allow the gap between the items in the "left"
+box to have 16px of space between them. */
