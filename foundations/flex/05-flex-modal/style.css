@@ -9,7 +9,7 @@ body {
   margin: 0;
   background: #aaa;
   color: #333;
-  /* I'll give you this one for free lol */
+  /* I'll give you this one for free */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,6 +20,18 @@ body {
   width: 480px;
   border-radius: 10px;
   box-shadow: 2px 4px 16px rgba(0,0,0,.2);
+  display: flex;
+  padding: 16px;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .icon {
@@ -33,6 +45,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .close-button {
@@ -60,10 +73,29 @@ button.continue {
   background: royalblue;
   border: 1px solid royalblue;
   color: white;
+  margin-top: 8px;
 }
 
 button.cancel {
   background: white;
   border: 1px solid #ddd;
   color: royalblue;
+  margin-top: 8px;
 }
+
+/* Explanation: The html file is appended crucially in two ways.
+1. A div is added to contain everything other than the icon
+2. The header div is moved to encompass the "x" button
+
+The first edit allows the icon and non-icon elements to sit next
+to one another. This container does not need to be flexed in the column
+direction for the reasons that will be mentioned below. 
+
+The second edit allows the header items to flex so that the title and
+x button are next to one another and can then be spaced to move the x 
+button to the top right. The whole header div is a block and so sits on
+one line. This pushes the remaining elements down to the next line.
+
+From here edits can be made individually, such as adding padding to the
+flexed modal container as well as gap between items. Margin edits are
+also made to the individual attributes. */
